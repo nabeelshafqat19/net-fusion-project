@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block title %}Admin - Add Product{% endblock %}
+
+{% block content %}
+<section class="py-10 md:py-20 bg-gray-50 flex-grow min-h-screen flex items-center justify-center px-4 md:px-0">
+    
+    <div class="bg-white p-6 md:p-10 rounded-xl shadow-lg max-w-2xl w-full border border-brand-light border-t-4 border-t-brand">
+        
+        <div class="mb-6 md:mb-8 border-b pb-4 text-center md:text-left">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Upload New Hardware</h2>
+            <p class="text-sm md:text-base text-gray-500 mt-1">Admin Portal: Add IT Equipment to the catalog.</p>
+        </div>
+
+        <form action="/admin/add-product" method="POST" class="space-y-5 md:space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Product Name</label>
+                    <input type="text" name="name" required placeholder="e.g. Dell PowerEdge R750" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand outline-none text-sm md:text-base">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Brand</label>
+                    <input type="text" name="brand" required placeholder="e.g. Dell, Cisco, Lenovo" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand outline-none text-sm md:text-base">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Category</label>
+                    <div class="flex gap-2">
+                        <select id="category" name="category" required class="flex-1 px-4 py-3 rounded border border-gray-300 focus:border-brand outline-none bg-white text-sm md:text-base">
+                            <option value="">Select Category</option>
+                            <option value="Servers & Data Center">Servers & Data Center</option>
+                            <option value="Networking Equipment">Networking Equipment</option>
+                            <option value="Workstations & Laptops">Workstations & Laptops</option>
+                            <option value="Cybersecurity">Cybersecurity</option>
+                            <option value="__new__">➕ Add New Category</option>
+                        </select>
+                        <button type="button" id="toggleNewCategory" class="px-4 py-3 bg-brand text-white rounded font-bold hover:bg-brand-dark transition text-sm md:text-base" title="Add new category" style="display: none;">
+                            ✕
+                        </button>
+                    </div>
+                    <input type="text" id="newCategoryInput" name="new_category" placeholder="Enter new category name..." class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand outline-none text-sm md:text-base mt-2" style="display: none;">
+                </div>
+                <script>
+                    const categorySelect = document.getElementById('category');
+                    const newCategoryInput = document.getElementById('newCategoryInput');
+                    const toggleBtn = document.getElementById('toggleNewCategory');
+                    
+                    categorySelect.addEventListener('change', function() {
+                        if (this.value === '__new__') {
+                            newCategoryInput.style.display = 'block';
+                            toggleBtn.style.display = 'block';
+                            newCategoryInput.focus();
+                            this.value = '';
+                        }
+                    });
+                    
+                    toggleBtn.addEventListener('click', function() {
+                        newCategoryInput.style.display = 'none';
+                        toggleBtn.style.display = 'none';
+                        newCategoryInput.value = '';
+                        categorySelect.value = '';
+                    });
+                    
+                    const form = document.querySelector('form');
+                    form.addEventListener('submit', function(e) {
+                        if (newCategoryInput.style.display !== 'none' && newCategoryInput.value) {
+                            categorySelect.value = newCategoryInput.value;
+                        }
+                    });
+                </script>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Price (USD)</label>
+                    <input type="number" step="0.01" name="price" required placeholder="0.00" class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand outline-none text-sm md:text-base">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Image URL</label>
+                    <input type="url" name="image_url" required placeholder="https://..." class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand outline-none text-sm md:text-base">
+                </div>
+
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Product Description</label>
+                    <textarea name="description" rows="4" required class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand outline-none text-sm md:text-base"></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full bg-brand text-white font-bold py-3 md:py-4 rounded shadow-lg hover:bg-brand-dark transition mt-2 md:mt-4 text-base md:text-lg">
+                Publish Product
+            </button>
+        </form>
+    </div>
+</section>
+{% endblock %}

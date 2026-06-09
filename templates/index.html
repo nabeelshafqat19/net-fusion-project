@@ -1,0 +1,329 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Premium IT Equipment{% endblock %}
+
+{% block styles %}
+<style>
+    /* Continuous Marquee Animation */
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    
+    .animate-scroll {
+        display: flex;
+        width: max-content;
+        animation: scroll 35s linear infinite;
+    }
+
+    .animate-scroll:hover {
+        animation-play-state: paused;
+    }
+    
+    /* White Partner Logos */
+    .partner-logo {
+        height: 35px; 
+        width: auto;  
+        max-width: 140px; 
+        object-fit: contain;
+        filter: brightness(0) invert(1); 
+        opacity: 0.85;
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .partner-logo:hover {
+        opacity: 1;
+    }
+
+    /* Fading edges for the scrolling carousel */
+    .mask-edges {
+        -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <section class="relative flex flex-col">
+        <div class="relative flex-grow overflow-hidden">
+            
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+                <source src="videos/tech-video.mp4" type="video/mp4">
+            </video>
+
+            <div class="absolute inset-0 bg-gray-900 bg-opacity-80 z-10"></div>
+            
+            <div class="relative z-20 container mx-auto px-6 py-24 md:py-32 flex flex-col items-center md:items-start text-center md:text-left">
+                <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-white mb-6 leading-tight max-w-4xl">
+                    Premium IT Equipment & Enterprise Technology Solutions
+                </h1>
+                <p class="text-[clamp(1.125rem,2vw,1.25rem)] text-gray-300 mb-10 max-w-2xl">
+                    "Your Trusted Partner for IT Solutions, Networking & Technology Services." Delivering reliable, cost-effective, and scalable architecture.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#hardware" class="bg-brand text-white px-8 py-4 text-lg font-bold rounded shadow-lg hover:bg-brand-dark transition text-center">
+                        Request A Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full bg-[#0a0f1a] py-6 border-t border-b border-gray-800">
+            <div class="container mx-auto px-6 flex items-center justify-between">
+                <button class="text-gray-500 hover:text-white text-3xl font-light pr-6 pb-1 transition">&lsaquo;</button>
+
+                <div class="overflow-hidden w-full relative mask-edges">
+                    <div class="animate-scroll flex items-center gap-16 px-4">
+                        <img src="https://cdn.simpleicons.org/ibm/white" alt="IBM" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/dell/white" alt="Dell" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/lenovo/white" alt="Lenovo" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/samsung/white" alt="Samsung" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/tplink/white" alt="TP-Link" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/cisco/white" alt="Cisco" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/hp/white" alt="HP" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/intel/white" alt="Intel" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/amd/white" alt="AMD" class="partner-logo">
+
+                        <img src="https://cdn.simpleicons.org/ibm/white" alt="IBM" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/dell/white" alt="Dell" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/lenovo/white" alt="Lenovo" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/samsung/white" alt="Samsung" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/tplink/white" alt="TP-Link" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/cisco/white" alt="Cisco" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/hp/white" alt="HP" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/intel/white" alt="Intel" class="partner-logo">
+                        <img src="https://cdn.simpleicons.org/amd/white" alt="AMD" class="partner-logo">
+                    </div>
+                </div>
+
+                <button class="text-gray-500 hover:text-white text-3xl font-light pl-6 pb-1 transition">&rsaquo;</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <h2 class="text-[clamp(1.875rem,3vw,2.25rem)] font-bold mb-6 text-gray-900">Company Introduction</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                NetFusion is a diversified Information Technology company providing comprehensive IT solutions, networking services, technical support, and supply of IT equipment to government departments, corporate organizations, educational institutions, commercial businesses, and industrial sectors. With a team of qualified engineers and technical experts, we ensure high-quality service delivery, timely project execution, and customer satisfaction.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-7xl">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Enterprise Solutions & Procurement</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Providing reliable, cost-effective, and scalable architecture tailored to the operational requirements of our clients.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-brand hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <div class="bg-brand-light w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                    <span class="text-3xl">💻</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">IT Equipment Supply</h3>
+                <ul class="text-gray-600 space-y-2 mb-6 text-sm">
+                    <li>• Desktop Computers & Workstations</li>
+                    <li>• Servers & Storage Solutions</li>
+                    <li>• Data Center Equipment</li>
+                    <li>• UPS & Power Backup Solutions</li>
+                </ul>
+                <a href="/products" class="text-brand font-bold hover:text-brand-dark flex items-center">
+                    Browse Hardware <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-brand hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <div class="bg-brand-light w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                    <span class="text-3xl">🌐</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Networking Infrastructure</h3>
+                <ul class="text-gray-600 space-y-2 mb-6 text-sm">
+                    <li>• LAN/WAN Deployment</li>
+                    <li>• Fiber Optic Installation</li>
+                    <li>• Router & Switch Configuration</li>
+                    <li>• VPN & Remote Connectivity</li>
+                </ul>
+                <a href="/products?category=Networking Equipment" class="text-brand font-bold hover:text-brand-dark flex items-center">
+                    Explore Networking <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-brand hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <div class="bg-brand-light w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                    <span class="text-3xl">🛡️</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Cybersecurity Solutions</h3>
+                <ul class="text-gray-600 space-y-2 mb-6 text-sm">
+                    <li>• Firewall Configuration</li>
+                    <li>• Endpoint Security</li>
+                    <li>• Antivirus & Malware Protection</li>
+                    <li>• Secure Remote Access Solutions</li>
+                </ul>
+                <a href="/products?category=Cybersecurity" class="text-brand font-bold hover:text-brand-dark flex items-center">
+                    View Security Tools <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-brand hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <div class="bg-brand-light w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                    <span class="text-3xl">📷</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Surveillance & Comms</h3>
+                <ul class="text-gray-600 space-y-2 mb-6 text-sm">
+                    <li>• IP CCTV Surveillance Systems</li>
+                    <li>• Biometric & Access Control</li>
+                    <li>• Intercom & IP Telephone Systems</li>
+                    <li>• Video Conferencing Solutions</li>
+                </ul>
+                <a href="/products?category=Surveillance" class="text-brand font-bold hover:text-brand-dark flex items-center">
+                    View Surveillance <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-brand hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <div class="bg-brand-light w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                    <span class="text-3xl">⚙️</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">IT Managed Services</h3>
+                <ul class="text-gray-600 space-y-2 mb-6 text-sm">
+                    <li>• On-Site & Remote IT Support</li>
+                    <li>• Server Installation & Management</li>
+                    <li>• Data Backup & Disaster Recovery</li>
+                    <li>• Annual Maintenance Contracts (AMC)</li>
+                </ul>
+                <a href="/about" class="text-brand font-bold hover:text-brand-dark flex items-center">
+                    Learn About Services <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-brand hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <div class="bg-brand-light w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                    <span class="text-3xl">🪑</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Corporate Office Furniture</h3>
+                <ul class="text-gray-600 space-y-2 mb-6 text-sm">
+                    <li>• Ergonomic Workstation Seating</li>
+                    <li>• Executive & Boardroom Tables</li>
+                    <li>• Modular Cubicles & Partitions</li>
+                    <li>• Enterprise Storage & Filing</li>
+                </ul>
+                <a href="/products?category=Office Furniture" class="text-brand font-bold hover:text-brand-dark flex items-center">
+                    Browse Furniture <span class="ml-2">→</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-brand-light font-bold uppercase tracking-wider">Professional Services</span>
+                <h2 class="text-[clamp(2rem,3.5vw,2.5rem)] font-extrabold mt-2">IT Solutions & Managed Services</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 border-t border-gray-700 pt-10">
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-brand-light">Networking Solutions</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>&bull; LAN/WAN Deployment</li>
+                        <li>&bull; Fiber Optic Installation</li>
+                        <li>&bull; Router & Switch Config</li>
+                        <li>&bull; Network Monitoring</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-brand-light">IT Support Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>&bull; On-Site & Remote Support</li>
+                        <li>&bull; Server Management</li>
+                        <li>&bull; Hardware Troubleshooting</li>
+                        <li>&bull; Annual Maintenance (AMC)</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-brand-light">Cybersecurity</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>&bull; Firewall Configuration</li>
+                        <li>&bull; Endpoint Security</li>
+                        <li>&bull; Network Security Monitoring</li>
+                        <li>&bull; Secure Remote Access</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-brand-light">Turnkey Projects</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>&bull; Government IT Procurement</li>
+                        <li>&bull; Corporate IT Deployment</li>
+                        <li>&bull; Educational Networking</li>
+                        <li>&bull; Data Backup & Recovery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="industries" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Why Choose Us</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="font-semibold">Experienced Technical Team</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="font-semibold">Genuine & Quality Products</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="font-semibold">Professional Project Mgmt</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="font-semibold">Competitive Pricing</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="font-semibold">Fast Response & Delivery</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="font-semibold">Customized Tech Solutions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Industries We Serve</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-brand-light border border-gray-200 px-4 py-2 rounded text-brand-dark font-medium">Government Departments</span>
+                        <span class="bg-brand-light border border-gray-200 px-4 py-2 rounded text-brand-dark font-medium">Corporate Sector</span>
+                        <span class="bg-brand-light border border-gray-200 px-4 py-2 rounded text-brand-dark font-medium">Banks & Financial</span>
+                        <span class="bg-brand-light border border-gray-200 px-4 py-2 rounded text-brand-dark font-medium">Educational Institutions</span>
+                        <span class="bg-brand-light border border-gray-200 px-4 py-2 rounded text-brand-dark font-medium">Healthcare Sector</span>
+                        <span class="bg-brand-light border border-gray-200 px-4 py-2 rounded text-brand-dark font-medium">Factories & Industries</span>
+                        <span class="bg-brand-light border border-gray-200 px-4 py-2 rounded text-brand-dark font-medium">Retail & Commercial</span>
+                        <span class="bg-brand-light border border-gray-200 px-4 py-2 rounded text-brand-dark font-medium">NGOs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

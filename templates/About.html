@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block title %}Company Profile - NetFusion{% endblock %}
+
+{% block styles %}
+<style>
+    /* Static Image Background for the Hero */
+    .about-hero-bg {
+        background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    /* Custom Bullet Points for Lists */
+    .custom-bullet li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #4b5563;
+    }
+    .custom-bullet li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: #1A5B9C;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <section class="relative flex flex-col">
+        <div class="relative about-hero-bg flex-grow py-24 md:py-32">
+            <div class="absolute inset-0 bg-gray-900 bg-opacity-85"></div>
+            
+            <div class="relative z-20 container mx-auto px-6 text-center">
+                <span class="text-brand-light font-bold uppercase tracking-widest mb-4 block">Company Profile</span>
+                <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-white mb-6 leading-tight max-w-5xl mx-auto">
+                    IT Solutions, Networking & Technology Support Services
+                </h1>
+                <p class="text-[clamp(1.125rem,2vw,1.25rem)] text-gray-300 font-light italic max-w-2xl mx-auto">
+                    “Your Trusted Partner for IT Solutions, Networking & Technology Services.”
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="flex justify-center mb-10">
+                <h2 class="text-[clamp(2rem,3.5vw,2.5rem)] font-extrabold text-gray-900 text-center border-b-4 border-brand inline-block pb-2">Company Introduction</h2>
+            </div>
+            
+            <div class="space-y-6 text-lg text-gray-700 leading-relaxed text-left">
+                <p>
+                    <strong class="text-brand font-extrabold">NetFusion</strong> is a diversified Information Technology company providing comprehensive IT solutions, networking services, technical support, and supply of IT equipment to government departments, corporate organizations, educational institutions, commercial businesses, and industrial sectors.
+                </p>
+                <p>
+                    The company specializes in delivering modern technology solutions including network infrastructure, hardware procurement, cybersecurity, surveillance systems, software support, and enterprise IT services. We are committed to providing reliable, cost-effective, and scalable solutions tailored to the operational requirements of our clients.
+                </p>
+                <p>
+                    With a team of qualified engineers, technical experts, and support professionals, we ensure high-quality service delivery, timely project execution, and customer satisfaction.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-brand font-bold uppercase tracking-wider">What We Do</span>
+                <h2 class="text-[clamp(2rem,3.5vw,2.5rem)] font-extrabold text-gray-900 mt-2">Core Business Areas</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 bg-brand-light text-brand rounded flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">IT Equipment Supply</h3>
+                    <ul class="custom-bullet text-base">
+                        <li>Desktop Computers & Workstations</li>
+                        <li>Laptops & Tablets</li>
+                        <li>Servers & Storage Solutions</li>
+                        <li>Networking Equipment</li>
+                        <li>CCTV & Surveillance Systems</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 bg-brand-light text-brand rounded flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">Networking Solutions</h3>
+                    <ul class="custom-bullet text-base mt-4">
+                        <li>LAN/WAN Infrastructure Deployment</li>
+                        <li>Structured Cabling Solutions</li>
+                        <li>Fiber Optic Installation</li>
+                        <li>Router & Switch Configuration</li>
+                        <li>Network Monitoring & Maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 bg-brand-light text-brand rounded flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2">Cybersecurity Solutions</h3>
+                    <ul class="custom-bullet text-base mt-4">
+                        <li>Firewall Configuration</li>
+                        <li>Endpoint Security</li>
+                        <li>Antivirus & Malware Protection</li>
+                        <li>Secure Remote Access Solutions</li>
+                        <li>Cybersecurity Consultancy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative flex flex-col py-24 md:py-32">
+        <div class="absolute inset-0 overflow-hidden z-0">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="videos/tech-video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="absolute inset-0 bg-brand-dark bg-opacity-85 z-10"></div>
+        
+        <div class="relative z-20 container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div class="bg-white bg-opacity-10 backdrop-blur-md p-10 rounded-2xl border border-white border-opacity-20 hover:bg-opacity-20 transition duration-300">
+                <svg class="w-14 h-14 text-blue-400 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <h3 class="text-3xl font-bold text-white mb-4">Vision</h3>
+                <p class="text-gray-200 leading-relaxed text-lg">
+                    To become a leading technology solutions provider recognized for excellence, reliability, and innovation in IT infrastructure and support services.
+                </p>
+            </div>
+            
+            <div class="bg-white bg-opacity-10 backdrop-blur-md p-10 rounded-2xl border border-white border-opacity-20 hover:bg-opacity-20 transition duration-300">
+                <svg class="w-14 h-14 text-blue-400 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <h3 class="text-3xl font-bold text-white mb-4">Mission</h3>
+                <p class="text-gray-200 leading-relaxed text-lg">
+                    To deliver efficient, secure, and cost-effective IT solutions that enable organizations to achieve operational excellence and digital transformation.
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

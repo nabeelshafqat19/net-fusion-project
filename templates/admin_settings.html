@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}Admin Settings - NetFusion{% endblock %}
+
+{% block content %}
+<section class="py-12 bg-gray-50 flex-grow min-h-screen">
+    <div class="container mx-auto px-6 max-w-2xl">
+        
+        <div class="mb-8 flex justify-between items-center">
+            <div>
+                <h1 class="text-4xl font-extrabold text-gray-900">Admin Settings</h1>
+                <p class="text-gray-600 mt-2">Manage your NetFusion business settings</p>
+                {% if admin_user %}
+                <p class="text-sm text-brand font-semibold mt-2">✓ Admin Logged in as: {{ admin_user.full_name }} ({{ admin_user.email }})</p>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if message %}
+        <div class="bg-green-50 border border-green-200 text-green-700 px-4 py-4 rounded-lg mb-6">
+            {{ message }}
+        </div>
+        {% endif %}
+
+        <div class="bg-white rounded-lg shadow-md p-8">
+            <form action="/admin/settings/update-vendor-email" method="POST" class="space-y-6">
+                
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">Vendor Email Address</label>
+                    <p class="text-gray-600 text-sm mb-4">This email will receive quote requests from customers when they click "Request a Quote"</p>
+                    <input 
+                        type="email" 
+                        name="vendor_email" 
+                        value="{{ vendor_email }}" 
+                        required
+                        class="w-full px-4 py-3 rounded border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand focus:ring-opacity-50 outline-none"
+                        placeholder="vendor@netfusion.com"
+                    >
+                    <p class="text-gray-500 text-xs mt-2">Example: vendor@netfusion.com or sales@netfusion.com</p>
+                </div>
+
+                <div class="border-t border-gray-200 pt-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">How It Works</h3>
+                    <ul class="space-y-3 text-gray-700 text-sm">
+                        <li class="flex items-start">
+                            <span class="text-brand font-bold mr-3">1.</span>
+                            <span>Customers click "Request a Quote" on any product</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand font-bold mr-3">2.</span>
+                            <span>Their default email client opens (Gmail, Outlook, Apple Mail, etc.)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand font-bold mr-3">3.</span>
+                            <span>The email is addressed to the vendor email above with pre-filled subject and message</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand font-bold mr-3">4.</span>
+                            <span>Customer can add additional details and send the quote request</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flex gap-4">
+                    <button type="submit" class="flex-1 bg-brand text-white py-3 rounded font-bold hover:bg-brand-dark transition">
+                        Save Settings
+                    </button>
+                    <a href="/" class="flex-1 text-center bg-gray-200 text-gray-700 py-3 rounded font-bold hover:bg-gray-300 transition">
+                        Back to Home
+                    </a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

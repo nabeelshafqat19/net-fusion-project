@@ -1,0 +1,56 @@
+<header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+            
+            <a href="#" class="flex items-center">
+                <img src="/images/Logov1.png" alt="NetFusion Logo" class="h-14 w-auto">
+            </a>
+
+            <nav class="hidden md:flex space-x-8 font-semibold text-gray-600 items-center">
+                <a href="/" class="text-brand">Home</a>                
+                <a href="#hardware" class="hover:text-brand transition">IT Equipment</a>
+                <a href="/products" class="hover:text-brand transition">Products</a>
+                <a href="#services" class="hover:text-brand transition">IT Services</a>
+                <a href="#industries" class="hover:text-brand transition">Industries</a>
+                <a href="/about" class="hover:text-brand transition">AboutUs</a>      
+                {% if request.session.get('is_admin') %}
+                <div class="flex gap-4 border-l-2 border-gray-200 pl-6">
+                    <a href="/admin/add-product" class="text-red-600 font-bold hover:text-red-800 transition">
+                        ➕ Add Product
+                    </a>
+                    <a href="/admin/settings" class="text-red-600 font-bold hover:text-red-800 transition">
+                        ⚙️ Settings
+                    </a>
+                </div>
+                {% endif %}         
+            </nav>
+
+            <a href="#contact" class="hidden md:block bg-brand text-white px-6 py-2 rounded shadow hover:bg-brand-dark transition font-bold">
+                Contact Us
+            </a>
+
+            <button id="mobile-menu-btn" class="md:hidden text-brand focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0">
+            <div class="flex flex-col px-6 py-4 space-y-4 text-center">
+                <a href="/" class="text-brand font-bold text-lg border-b border-gray-100 pb-2">Home</a>
+                <a href="#hardware" class="text-gray-600 hover:text-brand font-semibold text-lg border-b border-gray-100 pb-2">IT Equipment</a>
+                <a href="/products" class="text-gray-600 hover:text-brand font-semibold text-lg border-b border-gray-100 pb-2">Products</a>
+                <a href="#services" class="text-gray-600 hover:text-brand font-semibold text-lg border-b border-gray-100 pb-2">IT Services</a>
+                <a href="#industries" class="text-gray-600 hover:text-brand font-semibold text-lg border-b border-gray-100 pb-2">Industries</a>
+                <a href="/about" class="text-gray-600 hover:text-brand font-semibold text-lg border-b border-gray-100 pb-2">AboutUs</a>
+                {% if request.session.get('is_admin') %}
+                <a href="/admin/add-product" class="text-red-600 font-bold hover:text-red-800 transition text-lg">
+                    ➕ Add Product
+                </a>
+                <a href="/admin/settings" class="text-red-600 font-bold hover:text-red-800 transition text-lg">
+                    ⚙️ Settings
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
