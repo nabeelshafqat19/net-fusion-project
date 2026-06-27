@@ -4,7 +4,6 @@
 
 {% block styles %}
 <style>
-    /* Continuous Marquee Animation */
     @keyframes scroll {
         0% { transform: translateX(0); }
         100% { transform: translateX(-50%); }
@@ -20,17 +19,16 @@
         animation-play-state: paused;
     }
     
-    /* White Partner Logos */
     .partner-logo {
-        height: 35px; 
+        height: 50px; /* Adjust this value until the size looks right to you */
         width: auto;  
-        max-width: 140px; 
+        max-width: 200px; /* Increase this slightly if the logos start getting cut off */
         object-fit: contain;
         filter: brightness(0) invert(1); 
         opacity: 0.85;
         transition: opacity 0.3s ease;
         cursor: pointer;
-    }
+ }
     
     .partner-logo:hover {
         opacity: 1;
@@ -74,7 +72,7 @@
                 <button class="text-gray-500 hover:text-white text-3xl font-light pr-6 pb-1 transition">&lsaquo;</button>
 
                 <div class="overflow-hidden w-full relative mask-edges">
-                    <div class="animate-scroll flex items-center gap-16 px-4">
+                    <div class="animate-scroll flex items-center gap-16 px-12">
                         <img src="https://cdn.simpleicons.org/ibm/white" alt="IBM" class="partner-logo">
                         <img src="https://cdn.simpleicons.org/dell/white" alt="Dell" class="partner-logo">
                         <img src="https://cdn.simpleicons.org/lenovo/white" alt="Lenovo" class="partner-logo">
@@ -84,8 +82,6 @@
                         <img src="https://cdn.simpleicons.org/hp/white" alt="HP" class="partner-logo">
                         <img src="https://cdn.simpleicons.org/intel/white" alt="Intel" class="partner-logo">
                         <img src="https://cdn.simpleicons.org/amd/white" alt="AMD" class="partner-logo">
-
-                        <img src="https://cdn.simpleicons.org/ibm/white" alt="IBM" class="partner-logo">
                         <img src="https://cdn.simpleicons.org/dell/white" alt="Dell" class="partner-logo">
                         <img src="https://cdn.simpleicons.org/lenovo/white" alt="Lenovo" class="partner-logo">
                         <img src="https://cdn.simpleicons.org/samsung/white" alt="Samsung" class="partner-logo">
