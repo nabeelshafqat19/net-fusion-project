@@ -36,6 +36,43 @@
                 menu.classList.toggle('hidden');
             });
         }
+
+        // Detect if device is mobile
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        // Single-click quote button handler
+        function requestQuote(button, mailtoLink) {
+            // Disable the button to prevent multiple clicks
+            button.disabled = true;
+            button.style.opacity = '0.6';
+            button.style.cursor = 'not-allowed';
+            
+            // Change button text to indicate quote was sent
+            button.textContent = 'Quote Request Sent ✓';
+            
+            if (isMobileDevice()) {
+                // On mobile: use mailto to open default email app (Gmail, Outlook, etc.)
+                window.location.href = mailtoLink;
+            } else {
+                // On desktop: open Gmail web compose
+                // Extract email, subject, and body from mailto link
+                const mailtoMatch = mailtoLink.match(/mailto:([^\?]+)\?subject=([^&]+)&body=(.+)$/);
+                if (mailtoMatch) {
+                    const email = mailtoMatch[1];
+                    const subject = decodeURIComponent(mailtoMatch[2]);
+                    const body = decodeURIComponent(mailtoMatch[3]);
+                    
+                    // Gmail web compose URL
+                    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    window.open(gmailUrl, '_blank');
+                } else {
+                    // Fallback to mailto
+                    window.location.href = mailtoLink;
+                }
+            }
+        }
     </script>
 </body>
 </html>

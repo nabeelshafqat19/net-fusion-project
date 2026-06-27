@@ -28,3 +28,11 @@ class Settings(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     vendor_email = Column(String(255), default="vendor@netfusion.com")
+
+class Settings(Base):
+    __tablename__ = "settings"
+    __table_args__ = {'extend_existing': True} # Add this line here
+    
+    id = Column(Integer, primary_key=True, index=True)
+    vendor_email = Column(String(255), default="vendor@netfusion.com")
+    logo_url = Column(String(255), default="/images/Logov1.png")

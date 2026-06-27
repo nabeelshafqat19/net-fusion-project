@@ -1,0 +1,95 @@
+{% extends 'admin/admin_base.html' %}
+
+{% block title %}Manage Products{% endblock %}
+
+{% block admin_content %}
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+    <div>
+        <h1 class="text-2xl font-bold text-gray-900">Manage Inventory</h1>
+        <p class="text-sm text-gray-500 mt-1">View, edit, and remove your towel collections.</p>
+    </div>
+    <div class="flex gap-3">
+        <a href="/admin/add-product" class="bg-[#895737] text-[#F3E9DC] px-4 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition shadow-md flex items-center text-sm">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            Add New Product
+        </a>
+    </div>
+</div>
+
+<div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+    <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wider border-b border-gray-200">
+                    <th class="p-4 font-semibold">Product Detail</th>
+                    <th class="p-4 font-semibold">Collection</th>
+                    <th class="p-4 font-semibold">Price</th>
+                    <th class="p-4 font-semibold">Status</th>
+                    <th class="p-4 font-semibold text-right">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+                
+                {% for product in products %}
+                <tr class="hover:bg-gray-50 transition duration-150">
+                    <td class="p-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded bg-[#F3E9DC]/30 flex items-center justify-center border border-[#895737]/10 overflow-hidden">
+                                <img src="{{ product.image_url.split(',')[0] if product.image_url else '' }}" alt="{{ product.name }}" class="max-w-full max-h-full object-contain">
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-gray-900">{{ product.name }}</p>
+                                <p class="text-xs text-gray-500">{{ product.brand }}</p>
+                            </div>
+                        </div>
+                    </td>
+                    
+                    <td class="p-4">
+                        <span class="text-xs font-bold text-[#895737] bg-[#F3E9DC] px-2 py-1 rounded shadow-sm border border-[#895737]/20 uppercase tracking-wider">
+                            {{ product.category }}
+                        </span>
+                    </td>
+                    
+                    <td class="p-4 text-sm font-bold text-gray-900">
+                        ${{ "{:,.2f}".format(product.price) }}
+                    </td>
+                    
+                    <td class="p-4">
+                        {% if product.in_stock %}
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-600"></span> In Stock
+                        </span>
+                        {% else %}
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800 border border-red-200">
+                            <span class="w-1.5 h-1.5 rounded-full bg-red-600"></span> Out of Stock
+                        </span>
+                        {% endif %}
+                    </td>
+                    
+                    <td class="p-4 text-right space-x-2 whitespace-nowrap">
+                        <form action="/admin/delete-product/{{ product.id }}" method="POST" class="inline-block" onsubmit="return confirm('Delete this product permanently?');">
+                            <button type="submit" class="inline-flex items-center justify-center w-8 h-8 rounded text-red-600 hover:bg-red-50 transition border border-transparent hover:border-red-200">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                
+                <tr>
+                    <td colspan="5" class="p-12 text-center">
+                        <svg class="w-12 h-12 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">No products found</h3>
+                        <p class="text-gray-500 text-sm mb-4">You haven't added any towels to your inventory yet.</p>
+                        <a href="/admin/add-product" class="inline-flex items-center px-4 py-2 bg-white border border-[#895737] text-[#895737] rounded-lg text-sm font-semibold hover:bg-[#F3E9DC] transition">
+                            Add Your First Product
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

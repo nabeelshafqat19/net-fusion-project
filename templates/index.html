@@ -49,7 +49,7 @@
         <div class="relative flex-grow overflow-hidden">
             
             <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-                <source src="videos/tech-video.mp4" type="video/mp4">
+                <source src="/videos/tech-video.mp4" type="video/mp4">
             </video>
 
             <div class="absolute inset-0 bg-gray-900 bg-opacity-80 z-10"></div>
@@ -111,119 +111,131 @@
         </div>
     </section>
 
-    <section class="py-20 bg-gray-50">
+<section id="hardware" class="py-20 bg-gray-50">
     <div class="container mx-auto px-6 max-w-7xl">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Enterprise Solutions & Procurement</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Providing reliable, cost-effective, and scalable architecture tailored to the operational requirements of our clients.</p>
+            <span class="text-brand font-bold uppercase tracking-wider">Core Business Areas</span>
+            <h2 class="text-[clamp(2rem,3.5vw,2.5rem)] font-extrabold text-gray-900 mt-2">
+                Enterprise Solutions & Procurement
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mt-4">
+                Providing reliable, cost-effective, and scalable architecture tailored to the operational requirements of our clients.
+            </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-brand hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                <div class="bg-brand-light w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                    <span class="text-3xl">💻</span>
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+
+            <!-- IT Equipment -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+                <img src="https://images.unsplash.com/photo-1526406915894-7bcd65f60845?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aXQlMjBlcXVpcG1lbnR8ZW58MHx8MHx8fDA%3D"
+                     alt="IT Equipment" class="w-full h-28 sm:h-36 md:h-44 lg:h-48 object-cover">
+                <div class="p-3 sm:p-4 md:p-6 lg:p-8 flex-grow flex flex-col">
+                    <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-4">IT Equipment Supply</h3>
+                    <ul class="text-gray-600 space-y-1 md:space-y-2 mb-4 md:mb-6 text-[11px] sm:text-xs md:text-sm flex-grow">
+                        <li>• Desktop Computers & Workstations</li>
+                        <li>• Servers & Storage Solutions</li>
+                        <li>• Data Center Equipment</li>
+                        <li>• UPS & Power Backup Solutions</li>
+                    </ul>
+                    <a href="/products" class="text-brand font-bold hover:text-brand-dark flex items-center mt-auto">
+                        Browse Hardware <span class="ml-2">→</span>
+                    </a>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">IT Equipment Supply</h3>
-                <ul class="text-gray-600 space-y-2 mb-6 text-sm">
-                    <li>• Desktop Computers & Workstations</li>
-                    <li>• Servers & Storage Solutions</li>
-                    <li>• Data Center Equipment</li>
-                    <li>• UPS & Power Backup Solutions</li>
-                </ul>
-                <a href="/products" class="text-brand font-bold hover:text-brand-dark flex items-center">
-                    Browse Hardware <span class="ml-2">→</span>
-                </a>
             </div>
 
-            <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-brand hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                <div class="bg-brand-light w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                    <span class="text-3xl">🌐</span>
+            <!-- Networking -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+                <img src="https://plus.unsplash.com/premium_photo-1682145181120-73cfdfc8a36d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm91dGVyfGVufDB8fDB8fHww"
+                     alt="Networking Infrastructure" class="w-full h-28 sm:h-36 md:h-44 lg:h-48 object-cover">
+                <div class="p-3 sm:p-4 md:p-6 lg:p-8 flex-grow flex flex-col">
+                    <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-4">Networking Infrastructure</h3>
+                    <ul class="text-gray-600 space-y-1 md:space-y-2 mb-4 md:mb-6 text-[11px] sm:text-xs md:text-sm flex-grow">
+                        <li>• LAN/WAN Deployment</li>
+                        <li>• Fiber Optic Installation</li>
+                        <li>• Router & Switch Configuration</li>
+                        <li>• VPN & Remote Connectivity</li>
+                    </ul>
+                    <a href="/products?category=Networking Equipment" class="text-brand font-bold hover:text-brand-dark flex items-center mt-auto">
+                        Explore Networking <span class="ml-2">→</span>
+                    </a>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Networking Infrastructure</h3>
-                <ul class="text-gray-600 space-y-2 mb-6 text-sm">
-                    <li>• LAN/WAN Deployment</li>
-                    <li>• Fiber Optic Installation</li>
-                    <li>• Router & Switch Configuration</li>
-                    <li>• VPN & Remote Connectivity</li>
-                </ul>
-                <a href="/products?category=Networking Equipment" class="text-brand font-bold hover:text-brand-dark flex items-center">
-                    Explore Networking <span class="ml-2">→</span>
-                </a>
             </div>
 
-            <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-brand hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                <div class="bg-brand-light w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                    <span class="text-3xl">🛡️</span>
+            <!-- Cybersecurity -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80"
+                     alt="Cybersecurity Solutions" class="w-full h-28 sm:h-36 md:h-44 lg:h-48 object-cover">
+                <div class="p-3 sm:p-4 md:p-6 lg:p-8 flex-grow flex flex-col">
+                    <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-4">Cybersecurity Solutions</h3>
+                    <ul class="text-gray-600 space-y-1 md:space-y-2 mb-4 md:mb-6 text-[11px] sm:text-xs md:text-sm flex-grow">
+                        <li>• Firewall Configuration</li>
+                        <li>• Endpoint Security</li>
+                        <li>• Antivirus & Malware Protection</li>
+                        <li>• Secure Remote Access Solutions</li>
+                    </ul>
+                    <a href="/products?category=Cybersecurity" class="text-brand font-bold hover:text-brand-dark flex items-center mt-auto">
+                        View Security Tools <span class="ml-2">→</span>
+                    </a>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Cybersecurity Solutions</h3>
-                <ul class="text-gray-600 space-y-2 mb-6 text-sm">
-                    <li>• Firewall Configuration</li>
-                    <li>• Endpoint Security</li>
-                    <li>• Antivirus & Malware Protection</li>
-                    <li>• Secure Remote Access Solutions</li>
-                </ul>
-                <a href="/products?category=Cybersecurity" class="text-brand font-bold hover:text-brand-dark flex items-center">
-                    View Security Tools <span class="ml-2">→</span>
-                </a>
             </div>
 
-            <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-brand hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                <div class="bg-brand-light w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                    <span class="text-3xl">📷</span>
+            <!-- CCTV -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+                <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80"
+                     alt="Surveillance & Comms" class="w-full h-28 sm:h-36 md:h-44 lg:h-48 object-cover">
+                <div class="p-3 sm:p-4 md:p-6 lg:p-8 flex-grow flex flex-col">
+                    <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-4">Surveillance & Comms</h3>
+                    <ul class="text-gray-600 space-y-1 md:space-y-2 mb-4 md:mb-6 text-[11px] sm:text-xs md:text-sm flex-grow">
+                        <li>• IP CCTV Surveillance Systems</li>
+                        <li>• Biometric & Access Control</li>
+                        <li>• Intercom & IP Telephone Systems</li>
+                        <li>• Video Conferencing Solutions</li>
+                    </ul>
+                    <a href="/products?category=Surveillance" class="text-brand font-bold hover:text-brand-dark flex items-center mt-auto">
+                        View Surveillance <span class="ml-2">→</span>
+                    </a>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Surveillance & Comms</h3>
-                <ul class="text-gray-600 space-y-2 mb-6 text-sm">
-                    <li>• IP CCTV Surveillance Systems</li>
-                    <li>• Biometric & Access Control</li>
-                    <li>• Intercom & IP Telephone Systems</li>
-                    <li>• Video Conferencing Solutions</li>
-                </ul>
-                <a href="/products?category=Surveillance" class="text-brand font-bold hover:text-brand-dark flex items-center">
-                    View Surveillance <span class="ml-2">→</span>
-                </a>
             </div>
 
-            <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-brand hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                <div class="bg-brand-light w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                    <span class="text-3xl">⚙️</span>
+            <!-- IT Services -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+                     alt="IT Managed Services" class="w-full h-28 sm:h-36 md:h-44 lg:h-48 object-cover">
+                <div class="p-3 sm:p-4 md:p-6 lg:p-8 flex-grow flex flex-col">
+                    <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-4">IT Managed Services</h3>
+                    <ul class="text-gray-600 space-y-1 md:space-y-2 mb-4 md:mb-6 text-[11px] sm:text-xs md:text-sm flex-grow">
+                        <li>• On-Site & Remote IT Support</li>
+                        <li>• Server Installation & Management</li>
+                        <li>• Data Backup & Disaster Recovery</li>
+                        <li>• Annual Maintenance Contracts (AMC)</li>
+                    </ul>
+                    <a href="/about" class="text-brand font-bold hover:text-brand-dark flex items-center mt-auto">
+                        Learn About Services <span class="ml-2">→</span>
+                    </a>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">IT Managed Services</h3>
-                <ul class="text-gray-600 space-y-2 mb-6 text-sm">
-                    <li>• On-Site & Remote IT Support</li>
-                    <li>• Server Installation & Management</li>
-                    <li>• Data Backup & Disaster Recovery</li>
-                    <li>• Annual Maintenance Contracts (AMC)</li>
-                </ul>
-                <a href="/about" class="text-brand font-bold hover:text-brand-dark flex items-center">
-                    Learn About Services <span class="ml-2">→</span>
-                </a>
             </div>
 
-            <div class="bg-white rounded-xl shadow-md p-8 border-t-4 border-brand hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                <div class="bg-brand-light w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                    <span class="text-3xl">🪑</span>
+            <!-- Office Furniture -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+                <img src="https://media.istockphoto.com/id/2157387196/photo/a-modern-open-plan-office-with-abundant-natural-light-minimalist-decor-and-collaborative.webp?a=1&b=1&s=612x612&w=0&k=20&c=5Ti8Bb9msXGlG5EYj2UauSNHS0IL0f8a9ryfGDV9pbo="
+                     alt="Corporate Office Furniture" class="w-full h-28 sm:h-36 md:h-44 lg:h-48 object-cover">
+                <div class="p-3 sm:p-4 md:p-6 lg:p-8 flex-grow flex flex-col">
+                    <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-4">Corporate Office Furniture</h3>
+                    <ul class="text-gray-600 space-y-1 md:space-y-2 mb-4 md:mb-6 text-[11px] sm:text-xs md:text-sm flex-grow">
+                        <li>• Ergonomic Workstation Seating</li>
+                        <li>• Executive & Boardroom Tables</li>
+                        <li>• Modular Cubicles & Partitions</li>
+                        <li>• Enterprise Storage & Filing</li>
+                    </ul>
+                    <a href="/products?category=Office Furniture" class="text-brand font-bold hover:text-brand-dark flex items-center mt-auto">
+                        Browse Furniture <span class="ml-2">→</span>
+                    </a>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Corporate Office Furniture</h3>
-                <ul class="text-gray-600 space-y-2 mb-6 text-sm">
-                    <li>• Ergonomic Workstation Seating</li>
-                    <li>• Executive & Boardroom Tables</li>
-                    <li>• Modular Cubicles & Partitions</li>
-                    <li>• Enterprise Storage & Filing</li>
-                </ul>
-                <a href="/products?category=Office Furniture" class="text-brand font-bold hover:text-brand-dark flex items-center">
-                    Browse Furniture <span class="ml-2">→</span>
-                </a>
             </div>
 
         </div>
     </div>
 </section>
-                {% endfor %}
-                
-            </div>
-        </div>
-    </section>
 
     <section id="services" class="py-20 bg-gray-900 text-white">
         <div class="container mx-auto px-6">
